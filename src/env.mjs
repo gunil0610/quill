@@ -15,6 +15,12 @@ export const env = createEnv({
     KINDE_POST_LOGIN_REDIRECT_URL: z.string().url(),
     DATABASE_URL: z.string().url(),
     NODE_ENV: z.enum(["development", "test", "production"]),
+    UPLOADTHING_SECRET: z.string({
+      required_error: "Uploadthing secret is missing",
+    }),
+    UPLOADTHING_APP_ID: z.string({
+      required_error: "Uploadthing app id is missing",
+    }),
   },
 
   /**
